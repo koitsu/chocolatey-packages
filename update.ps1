@@ -1,5 +1,9 @@
 Import-Module au
 
+function global:au_AfterUpdate ($Package)  {
+	Set-DescriptionFromReadme $Package
+}
+
 function global:au_SearchReplace {
 	@{
 		'hxd.nuspec' = @{
