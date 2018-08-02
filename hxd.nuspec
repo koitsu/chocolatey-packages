@@ -5,7 +5,7 @@
 		<!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
 		<id>hxd</id>
 		<title>HxD - Hex Editor and Disk Editor (Install)</title>
-		<version>2.0-rc</version>
+		<version>2.0.0.0</version>
 		<authors>Maël Hörz</authors>
 		<owners>Matthew Manela,ComFreek</owners>
 		<summary>HxD is a carefully designed and fast hex editor which, additionally to raw disk editing and modifying of main memory (RAM), handles files of any size.</summary>
@@ -20,10 +20,6 @@ Furthermore a lot of effort was put into making operations fast and efficient, i
 
 ### Package Specifics
 All package versions will download and install the latest HxD version since the software vendor only provides a generic URI without version information.
-
-### Package Parameters
-
-Run `choco install hxd -packageParameters "lang=en"`. You can replace 'en' by the ISO 639-1 two-letter language code (see [List of ISO 639-1 codes on Wikipedia](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)) of one of the languages listed on the official download site: http://mh-nexus.de/en/downloads.php?product=HxD
 ]]></description>
 		<projectUrl>https://mh-nexus.de/en/hxd/</projectUrl>
 		<packageSourceUrl>https://github.com/ComFreek/chocolatey-packages/tree/master/hxd</packageSourceUrl>
@@ -31,18 +27,15 @@ Run `choco install hxd -packageParameters "lang=en"`. You can replace 'en' by th
 		<mailingListUrl>https://forum.mh-nexus.de/viewforum.php?f=10</mailingListUrl>
 		<bugTrackerUrl>https://forum.mh-nexus.de/viewforum.php?f=10</bugTrackerUrl>
 		<tags>hxd editor hex file admin</tags>
-		<copyright>Copyright © 2003-2015 Maël Hörz</copyright>
-		<licenseUrl>https://mh-nexus.de/en/about.php</licenseUrl>
+		<copyright>Copyright © 2003-2018 Maël Hörz</copyright>
+		<licenseUrl>https://mh-nexus.de/en/hxd/license.php</licenseUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<iconUrl>https://cdn.rawgit.com/ComFreek/chocolatey-packages/201009c4aa15f7ff762b73a390e7ea29cf2fcf5e/icons/HxD.png</iconUrl>
 		<releaseNotes>https://mh-nexus.de/en/hxd/changelog.php</releaseNotes>
-		<dependencies>
-			<!-- Chocolatey 0.90.10.x guarantees us .NET 4.0 which allows us to use the ConvertFrom-Json polyfill,
-			     which depends on .NET 3.5, in chocolateyInstall.ps1 -->
-			<dependency id="chocolatey" version="0.9.10.0" />
-		</dependencies>
 	</metadata>
 	<files>
-		<file src="tools\**" target="tools" />
+		<file src="tools\chocolateyInstall.ps1" target="tools" />
+		<file src="tools\chocolateyUninstall.ps1" target="tools" />
+		<file src="tools\HxDSetup.zip" target="tools" />
 	</files>
 </package>

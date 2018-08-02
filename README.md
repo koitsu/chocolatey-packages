@@ -9,7 +9,3 @@ Furthermore a lot of effort was put into making operations fast and efficient, i
 
 ### Package Specifics
 All package versions will download and install the latest HxD version since the software vendor only provides a generic URI without version information.
-
-### Package Parameters
-
-Run `choco install hxd -packageParameters "lang=en"`. You can replace 'en' by the ISO 639-1 two-letter language code (see [List of ISO 639-1 codes on Wikipedia](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)) of one of the languages listed on the official download site: http://mh-nexus.de/en/downloads.php?product=HxD
