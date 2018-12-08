@@ -30,7 +30,7 @@ All package versions will download and install the latest HxD version since the 
 		<copyright>Copyright © 2003-2018 Maël Hörz</copyright>
 		<licenseUrl>https://mh-nexus.de/en/hxd/license.php</licenseUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<iconUrl>https://cdn.rawgit.com/ComFreek/chocolatey-packages/201009c4aa15f7ff762b73a390e7ea29cf2fcf5e/icons/HxD.png</iconUrl>
+		<iconUrl>https://cdn.jsdelivr.net/gh/ComFreek/chocolatey-packages@201009c4aa15f7ff762b73a390e7ea29cf2fcf5e/icons/HxD.png</iconUrl>
 		<releaseNotes>https://mh-nexus.de/en/hxd/changelog.php</releaseNotes>
 	</metadata>
 	<files>
