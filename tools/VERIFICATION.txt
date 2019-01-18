@@ -8,7 +8,7 @@ against the checksum provided on the vendor's page [2] or by redownloading from 
 Note that this verification can only be done if the package's version is still the latest version.
 The vendor does not serve older binaries or hashes on his website.
 
-[1]: tools/HxDSetup.zip SHA-512: B76416EEB86C226654F425151370801D1C51182A90DE1DCB8DB1BCA0F5758A999F1FE18303EABEAF789B4E62F54E1181262D4DE623DED89481F9E32CC8F70FA9
+[1]: tools/HxDSetup.zip SHA-512: 3524320C54AFA4AA597913011F2A650DFABACE924664072A26FAC3A10462895CC26D14474908F0F64AFC2CB634DBCB29F1B37316641AB56110AE2C7E0C370F8A
      This checksum has been automatically computed upon (automatic) pushing of the latest package.
      It can manually be recomputed, e.g. in PowerShell with `Get-FileHash tools/HxDSetup.zip -Algorithm SHA512`.
 [2]: https://mh-nexus.de/updates/HxDCurrentVersion.json
