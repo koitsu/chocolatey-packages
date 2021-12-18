@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>keepass-plugin-hibpofflinecheck</id>
+    <version>1.7.6</version>
+    <title>KeePass Plugin HIBPOfflineCheck</title>
+    <authors>Mihai Ciuraru</authors>
+    <owners>koitsu</owners>
+    <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
+    <projectUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectUrl>
+    <iconUrl>http://cdn.rawgit.com/koitsu/chocolatey-packages/keepass-plugin-hibofflinecheck/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[HIBP Offline Check is a KeePass plugin for Have I Been Pwned (HIBP).
+
+Features:
+
+- passwords can be checked in offline or online mode
+- binary search in the large password file gives an instant result for the offline mode
+- bloom filter support
+- k-anonimity method implemented for the online mode
+- the status (Pwned or Secure) is saved in the KeePass database and will be retrieved when reopening the app, and updated if the password entry changes
+- each password is individually checked only on user request
+- multiple passwords can be checked in bulk by using the right click menu
+- option to check all passwords in the database
+
+For further information, please refer to the HIBPOfflineCheck documentation itself
+located on GitHub.
+]]></description>
+    <summary>Plugin for KeePass 2.x to support Have I Been Pwned (HIBP)</summary>
+    <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases</releaseNotes>
+    <copyright>© Mihai Ciuraru</copyright>
+    <tags>keepass plugin automate security hibp pwned owned</tags>
+    <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/keepass-plugin-hibpofflinecheck</packageSourceUrl>
+    <docsUrl>http://keepass.info/help/v2_dev/scr_index.html</docsUrl>
+    <dependencies>
+      <dependency id="keepass" version="[2.42, 3.0)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
