@@ -1,4 +1,4 @@
-# script based on tunisiano187, released under AGPL-3.0 License
+﻿# script based on tunisiano187, released under AGPL-3.0 License
 # source: https://github.com/tunisiano187/Chocolatey-packages/blob/master/automatic/keepass-plugin-kpscript/tools/chocolateyInstall.ps1
 
 # powershell v2 compatibility
