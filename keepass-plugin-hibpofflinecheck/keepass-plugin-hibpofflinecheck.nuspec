@@ -31,7 +31,7 @@ located on GitHub.
     <copyright>© Mihai Ciuraru</copyright>
     <tags>keepass plugin automate security hibp pwned owned</tags>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/keepass-plugin-hibpofflinecheck</packageSourceUrl>
-    <docsUrl>http://keepass.info/help/v2_dev/scr_index.html</docsUrl>
+    <docsUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/master/readme.md</docsUrl>
     <dependencies>
       <dependency id="keepass" version="[2.42, 3.0)" />
     </dependencies>
