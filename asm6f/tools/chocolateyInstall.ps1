@@ -11,7 +11,7 @@ if ($pp.InstallDir -or $pp.InstallationPath) {
   $InstallDir = $pp.InstallDir + $pp.InstallationPath
 }
 
-Write-Host "asm6f is going to be installed in '$installDir'"
+Write-Host "asm6f is going to be installed in: $installDir"
 
 $packageArgs = @{
   packageName     = $env:chocolateyPackageName
