@@ -8,7 +8,7 @@
     <owners>koitsu</owners>
     <license type="expression">UNLICENSED</license>
     <projectUrl>https://github.com/freem/asm6f</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/koitsu/chocolatey-packages/master/asm6f/icon.png</iconUrl>
+    <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/asm6f/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[ASM6f is a fork of ASM6, a 6502 assembler by loopy.
 
