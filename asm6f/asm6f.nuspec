@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>asm6f</id>
+    <version>20181019</version>
+    <title>asm6f 6502 assembler</title>
+    <authors>freem, nicklausw, Sour, loopy</authors>
+    <owners>koitsu</owners>
+    <license type="expression">UNLICENSED</license>
+    <projectUrl>https://github.com/freem/asm6f</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/koitsu/chocolatey-packages/master/asm6f/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[ASM6f is a fork of ASM6, a 6502 assembler by loopy.
+
+Features compared to stock ASM6:
+
+* Support for some illegal/undocumented opcodes.
+  (Note: Support for unstable opcodes requires use of directives.)
+* Code from sonder's fork of ASM6 to allow output of FCEUX-compatible .nl files.
+* Output of Lua-compatible symbol files.
+* New directives "IGNORENL" and "ENDINL".
+  These two are used for ignoring certain defines when using the -n option.
+* Support for iNES original and 2.0 header insertion.
+* Output of .cdl files, for use with FCEUX/Mesen.
+* Output of Mesen-compatible symbol files.
+* Generic +/- labels do not break @local scope
+
+For further information, please refer to the asm6f documentation itself
+located on GitHub.
+]]></description>
+    <summary>A 6502 assembler intended for NES and Famicom development</summary>
+    <releaseNotes>https://github.com/freem/asm6f/releases</releaseNotes>
+    <copyright>© AJ Kelly</copyright>
+    <tags>assembler 6502 nes famicom</tags>
+    <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/asm6f</packageSourceUrl>
+    <docsUrl>https://github.com/freem/asm6f</docsUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
