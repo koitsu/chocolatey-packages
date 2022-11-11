@@ -8,7 +8,7 @@
     <owners>koitsu</owners>
     <licenseUrl>https://spdx.org/licenses/MIT.html</licenseUrl>
     <projectUrl>https://github.com/JanisEst/KeePassQRCodeView</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/koitsu/chocolatey-packages/master/keepass-plugin-keepassqrcodeview/icon.png</iconUrl>
+    <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/keepass-plugin-keepassqrcodeview/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[KeePassQRCodeView is a plug-in for KeePass 2.x which shows QR Codes for entry fields. These codes can be scanned to copy the encoded data to the scanner (smartphone, ...).
 

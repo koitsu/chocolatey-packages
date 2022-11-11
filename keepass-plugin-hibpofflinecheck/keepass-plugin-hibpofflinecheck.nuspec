@@ -8,7 +8,7 @@
     <owners>koitsu</owners>
     <licenseUrl>https://www.gnu.org/licenses/gpl-3.0.html</licenseUrl>
     <projectUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/koitsu/chocolatey-packages/master/keepass-plugin-hibpofflinecheck/icon.png</iconUrl>
+    <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/keepass-plugin-hibpofflinecheck/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[HIBP Offline Check is a KeePass plugin for Have I Been Pwned (HIBP).
 
