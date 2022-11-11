@@ -3,7 +3,7 @@
   <metadata>
     <id>asm6f</id>
     <version>1.6.20181019</version>
-    <title>asm6f 6502 assembler</title>
+    <title>ASM6f</title>
     <authors>freem, nicklausw, Sour, loopy</authors>
     <owners>koitsu</owners>
     <licenseUrl>https://spdx.org/licenses/Unlicense.html</licenseUrl>
