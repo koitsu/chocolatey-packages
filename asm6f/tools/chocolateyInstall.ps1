@@ -3,6 +3,8 @@
 # https://github.com/chocolatey-community/chocolatey-packages/blob/master/automatic/curl/tools/chocolateyInstall.ps1
 # https://github.com/chocolatey-community/chocolatey-packages/blob/master/automatic/wget/tools/chocolateyinstall.ps1
 
+$ErrorActionPreference = 'Stop'
+
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $pp = Get-PackageParameters
 $installDir = $toolsPath
