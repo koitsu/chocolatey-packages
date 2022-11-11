@@ -23,8 +23,7 @@ Features:
 - multiple passwords can be checked in bulk by using the right click menu
 - option to check all passwords in the database
 
-For further information, please refer to the HIBPOfflineCheck documentation itself
-located on GitHub.
+For further information, please refer to the HIBPOfflineCheck documentation itself located on GitHub.
 ]]></description>
     <summary>Plugin for KeePass 2.x to support Have I Been Pwned (HIBP)</summary>
     <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases</releaseNotes>

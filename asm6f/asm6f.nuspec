@@ -25,8 +25,7 @@ Features compared to stock ASM6:
 * Output of Mesen-compatible symbol files.
 * Generic +/- labels do not break @local scope
 
-For further information, please refer to the asm6f documentation itself
-located on GitHub.
+For further information, please refer to the asm6f documentation itself located on GitHub.
 ]]></description>
     <summary>A 6502 assembler intended for NES and Famicom development</summary>
     <releaseNotes>https://github.com/freem/asm6f/releases</releaseNotes>

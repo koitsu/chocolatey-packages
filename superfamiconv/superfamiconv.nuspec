@@ -16,8 +16,7 @@ It supports generation of map and tile data (and for some platforms, sprite data
 
 Systems supported include the Game Boy, Game Boy Color, Game Boy Advance, Genesis and Mega Drive, PC Engine and TurboGrafx-16, Super Famicom and Super Nintendo, WonderSwan, and WonderSwan Color.
 
-For further information, please refer to the SuperFamiconv documentation itself
-located on GitHub.
+For further information, please refer to the SuperFamiconv documentation itself located on GitHub.
 ]]></description>
     <summary>A tile graphics converter for classic video game consoles and handhelds</summary>
     <releaseNotes>https://github.com/Optiroc/SuperFamiconv/releases</releaseNotes>
