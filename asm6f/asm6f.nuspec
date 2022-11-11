@@ -31,6 +31,7 @@ For further information, please refer to the asm6f documentation itself located 
     <releaseNotes>https://github.com/freem/asm6f/releases</releaseNotes>
     <copyright>© AJ Kelly</copyright>
     <tags>assembler 6502 nes famicom</tags>
+    <projectSourceUrl>https://github.com/freem/asm6f</projectSourceUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/asm6f</packageSourceUrl>
     <docsUrl>https://github.com/freem/asm6f</docsUrl>
   </metadata>
