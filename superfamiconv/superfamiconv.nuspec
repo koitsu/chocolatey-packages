@@ -12,14 +12,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description><![CDATA[SuperFamiconv is a tile graphics converter with flexible and composable command line options.
 
-It supports generation of map and tile data (and for some platforms, sprite data),
-including output in non-binary formats like JSON.  Additionally, it supports tile
-optimization (discarding redundant tiles, including those which can be optimized
-through H/V flipping).
+It supports generation of map and tile data (and for some platforms, sprite data), including output in non-binary formats like JSON.  Additionally, it supports tile optimization (discarding redundant tiles, including those which can be optimized through H/V flipping).
 
-Systems supported include the Game Boy, Game Boy Color, Game Boy Advance, Genesis
-and Mega Drive, PC Engine and TurboGrafix 16, Super Famicom and Super Nintendo,
-WonderSwan, and WonderSwan Color.
+Systems supported include the Game Boy, Game Boy Color, Game Boy Advance, Genesis and Mega Drive, PC Engine and TurboGrafx-16, Super Famicom and Super Nintendo, WonderSwan, and WonderSwan Color.
 
 For further information, please refer to the SuperFamiconv documentation itself
 located on GitHub.
@@ -27,7 +22,7 @@ located on GitHub.
     <summary>A tile graphics converter for classic video game consoles and handhelds</summary>
     <releaseNotes>https://github.com/Optiroc/SuperFamiconv/releases</releaseNotes>
     <copyright>© David Lindecrantz</copyright>
-    <tags>gameboy gb gbc gba genesis megadrive pcengine pce turbografix tg16 sfc snes wonderswan</tags>
+    <tags>gameboy gb gbc gba genesis megadrive pcengine pce turbografx tg16 sfc snes wonderswan</tags>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/superfamiconv</packageSourceUrl>
     <docsUrl>https://github.com/Optiroc/SuperFamiconv</docsUrl>
   </metadata>
