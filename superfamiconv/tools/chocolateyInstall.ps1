@@ -3,6 +3,10 @@
 # https://github.com/chocolatey-community/chocolatey-packages/blob/master/automatic/curl/tools/chocolateyInstall.ps1
 # https://github.com/chocolatey-community/chocolatey-packages/blob/master/automatic/wget/tools/chocolateyinstall.ps1
 
+if ((Get-OSArchitectureWidth 32) -or $env:chocolateyForceX86 -eq 'true') {
+  throw 'x86 architecture detected. SuperFamiconv binaries are only available for 64-bit systems.'
+}
+
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $pp = Get-PackageParameters
 $installDir = $toolsPath
