@@ -6,7 +6,7 @@
     <title>KeePass Plugin KeePassQRCodeView</title>
     <authors>Janis Estelmann</authors>
     <owners>koitsu</owners>
-    <licenseUrl>https://spdx.org/licenses/MIT.html</licenseUrl>
+    <licenseUrl>https://github.com/JanisEst/KeePassQRCodeView/blob/v1.1.0/LICENSE</licenseUrl>
     <projectUrl>https://github.com/JanisEst/KeePassQRCodeView</projectUrl>
     <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/keepass-plugin-keepassqrcodeview/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
