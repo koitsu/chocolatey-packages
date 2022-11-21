@@ -24,7 +24,7 @@ For further information, please refer to the SuperFamiconv documentation itself 
     <tags>gameboy gb gbc gba genesis megadrive pcengine pce turbografx tg16 sfc snes wonderswan</tags>
     <projectSourceUrl>https://github.com/Optiroc/SuperFamiconv</projectSourceUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/superfamiconv</packageSourceUrl>
-    <docsUrl>https://github.com/Optiroc/SuperFamiconv/blob/master/README.md</docsUrl>
+    <docsUrl>https://github.com/Optiroc/SuperFamiconv/blob/v0.9.2/README.md</docsUrl>
     <bugTrackerUrl>https://github.com/Optiroc/SuperFamiconv/issues</bugTrackerUrl>
   </metadata>
   <files>
