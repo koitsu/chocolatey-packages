@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-set -x
 
 # https://docs.github.com/en/rest/releases/releases#get-the-latest-release
 
