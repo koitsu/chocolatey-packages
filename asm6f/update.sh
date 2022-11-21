@@ -6,6 +6,7 @@ set -e
 t1=$(mktemp)
 curl -s -S \
   -o "${t1}" \
+  -A 'koitsu' \
   -H 'Accept: application/vnd.github+json' \
   'https://api.github.com/repos/freem/asm6f/releases/latest'
 
