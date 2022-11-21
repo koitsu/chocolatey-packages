@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+shopt -s expand_aliases
 
 # https://docs.github.com/en/rest/releases/releases#get-the-latest-release
 
@@ -23,9 +24,15 @@ build=${build%%.zip}
 rm -f "${t1}"
 
 case "$(uname -s)" in
-  Linux)   checksum=$(curl -s -L -o- "${zipurl}" | sha256sum | awk '{ print $1 }') ;;
-  FreeBSD) checksum=$(curl -s -L -o- "${zipurl}" | sha256) ;;
-  *)       echo "ERROR: Unknown platform for sha256 checksum utility" ; exit 1
+  Linux|MINGW*)
+    alias sed="sed -i"
+    checksum=$(curl -s -L -o- "${zipurl}" | sha256sum | awk '{ print $1 }')
+    ;;
+  FreeBSD)
+    alias sed="sed -i ''"
+    checksum=$(curl -s -L -o- "${zipurl}" | sha256)
+    ;;
+  *) echo "ERROR: Unknown platform for sha256 checksum utility" ; exit 1
 esac
 
 echo "Latest release details:"
@@ -42,13 +49,13 @@ install_ps1="tools/chocolateyInstall.ps1"
 
 # Update nuspec with new version parameters
 
-sed -i '' -r \
+sed -r \
   -e "/<version>/ s|>.+<|>${version_num}.${build}<|" \
   "${nuspec}"
 
 # Update chocolateyInstall.ps1 with new url and checksum
 
-sed -i '' -r \
+sed -r \
   -e "/url[[:space:]]*=/      s|'.+'|'${zipurl}'|" \
   -e "/checksum[[:space:]]*=/ s|'.+'|'${checksum}'|" \
   "${install_ps1}"

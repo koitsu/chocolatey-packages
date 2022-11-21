@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+shopt -s expand_aliases
 
 # https://docs.github.com/en/rest/releases/releases#get-the-latest-release
 
@@ -19,9 +20,15 @@ version=$(cat "${t1}" | jq -r '.tag_name')
 rm -f "${t1}"
 
 case "$(uname -s)" in
-  Linux)   checksum=$(curl -s -L -o- "${plgxurl}" | sha256sum | awk '{ print $1 }') ;;
-  FreeBSD) checksum=$(curl -s -L -o- "${plgxurl}" | sha256) ;;
-  *)       echo "ERROR: Unknown platform for sha256 checksum utility" ; exit 1
+  Linux|MINGW*)
+    alias sed="sed -i"
+    checksum=$(curl -s -L -o- "${plgxurl}" | sha256sum | awk '{ print $1 }')
+    ;;
+  FreeBSD)
+    alias sed="sed -i ''"
+    checksum=$(curl -s -L -o- "${plgxurl}" | sha256)
+    ;;
+  *) echo "ERROR: Unknown platform for sha256 checksum utility" ; exit 1
 esac
 
 echo "Latest release details:"
@@ -38,7 +45,7 @@ install_ps1="tools/chocolateyInstall.ps1"
 
 # Update nuspec with new licenseUrl, docsUrl, and version parameters
 
-sed -i '' -r \
+sed -r \
   -e "/<licenseUrl>/ s|>.+<|>${license_url}<|" \
   -e "/<docsUrl>/    s|>.+<|>${docs_url}<|" \
   -e "/<version>/    s|>.+<|>${version}<|" \
@@ -46,7 +53,7 @@ sed -i '' -r \
 
 # Update chocolateyInstall.ps1 with new url64bit and checksum64
 
-sed -i '' -r \
+sed -r \
   -e "/\\\$url[[:space:]]*=/      s|'.+'|'${plgxurl}'|" \
   -e "/\\\$checksum[[:space:]]*=/ s|'.+'|'${checksum}'|" \
   "${install_ps1}"
