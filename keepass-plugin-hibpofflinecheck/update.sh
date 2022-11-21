@@ -38,17 +38,17 @@ install_ps1="tools/chocolateyInstall.ps1"
 
 # Update nuspec with new licenseUrl, docsUrl, and version parameters
 
-perl -p -i \
-  -e "s|>.+<|>${license_url}<| if m|<licenseUrl>|;" \
-  -e "s|>.+<|>${docs_url}<|    if m|<docsUrl>|;" \
-  -e "s|>.+<|>${version}<|     if m|<version>|;" \
+sed -i '' -r \
+  -e "/<licenseUrl>/ s|>.+<|>${license_url}<|" \
+  -e "/<docsUrl>/    s|>.+<|>${docs_url}<|" \
+  -e "/<version>/    s|>.+<|>${version}<|" \
   "${nuspec}"
 
 # Update chocolateyInstall.ps1 with new url64bit and checksum64
 
-perl -p -i \
-  -e "s|'.+'|'${plgxurl}'|  if m|\\\$url\s*=|;" \
-  -e "s|'.+'|'${checksum}'| if m|\\\$checksum\s*=|;" \
+sed -i '' -r \
+  -e "/\\\$url[[:space:]]*=/      s|'.+'|'${plgxurl}'|" \
+  -e "/\\\$checksum[[:space:]]*=/ s|'.+'|'${checksum}'|" \
   "${install_ps1}"
 
 git status

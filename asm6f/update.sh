@@ -42,15 +42,15 @@ install_ps1="tools/chocolateyInstall.ps1"
 
 # Update nuspec with new version parameters
 
-perl -p -i \
-  -e "s|>.+<|>${version_num}.${build}<| if m|<version>|;" \
+sed -i '' -r \
+  -e "/<version>/ s|>.+<|>${version_num}.${build}<|" \
   "${nuspec}"
 
 # Update chocolateyInstall.ps1 with new url and checksum
 
-perl -p -i \
-  -e "s|'.+'|'${zipurl}'|   if m|url\s*=|;" \
-  -e "s|'.+'|'${checksum}'| if m|checksum\s*=|;" \
+sed -i '' -r \
+  -e "/url[[:space:]]*=/      s|'.+'|'${zipurl}'|" \
+  -e "/checksum[[:space:]]*=/ s|'.+'|'${checksum}'|" \
   "${install_ps1}"
 
 git status
