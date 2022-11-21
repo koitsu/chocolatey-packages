@@ -9,7 +9,7 @@ curl -s -S \
   -H 'Accept: application/vnd.github+json' \
   'https://api.github.com/repos/freem/asm6f/releases/latest'
 
-zipurl=$(cat "${t1}" | jq -r '.assets[] | select(.name | contains(".zip")) | .browser_download_url')
+zipurl=$(cat "${t1}" | jq -r '.assets[] | select(.name | endswith(".zip")) | .browser_download_url')
 tag_name=$(cat "${t1}" | jq -r '.tag_name')
 version_str=$(echo "${tag_name}" | cut -d'_' -f1)
 version_num=${version_str/v/}

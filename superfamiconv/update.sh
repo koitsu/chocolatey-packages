@@ -9,7 +9,7 @@ curl -s -S \
   -H 'Accept: application/vnd.github+json' \
   'https://api.github.com/repos/Optiroc/SuperFamiconv/releases/latest'
 
-zipurl64=$(cat "${t1}" | jq -r '.assets[] | select(.name | contains("win_x64.zip")) | .browser_download_url')
+zipurl64=$(cat "${t1}" | jq -r '.assets[] | select(.name | endswith("win_x64.zip")) | .browser_download_url')
 version_str=$(cat "${t1}" | jq -r '.tag_name')
 version_num=${version_str/v/}
 
