@@ -5,13 +5,7 @@
 
 $ErrorActionPreference = 'Stop'
 
-$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
-$pp = Get-PackageParameters
-$installDir = $toolsPath
-
-if ($pp.InstallDir -or $pp.InstallationPath) {
-  $InstallDir = $pp.InstallDir + $pp.InstallationPath
-}
+$installDir = Split-Path $MyInvocation.MyCommand.Definition
 
 Write-Host "asm6f is going to be installed in: $installDir"
 
