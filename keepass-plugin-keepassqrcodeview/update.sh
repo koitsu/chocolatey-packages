@@ -21,7 +21,7 @@ version_num=${version_str/v/}
 rm -f "${t1}"
 
 case "$(uname -s)" in
-  Linux|MINGW*)
+  Linux|CYGWIN*|MINGW*)
     alias sed="sed -i"
     checksum=$(curl -s -L -o- "${plgxurl}" | sha256sum | awk '{ print $1 }')
     ;;
