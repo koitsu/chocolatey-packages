@@ -27,7 +27,7 @@ For further information, please refer to the HIBPOfflineCheck documentation itse
 ]]></description>
     <summary>Plugin for KeePass 2.x to support Have I Been Pwned (HIBP)</summary>
     <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases</releaseNotes>
-    <copyright>© Mihai Ciuraru</copyright>
+    <copyright>Copyright (C) 2018-2019 Mihai Ciuraru</copyright>
     <tags>keepass plugin automate security hibp pwned owned</tags>
     <projectSourceUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/keepass-plugin-hibpofflinecheck</packageSourceUrl>
