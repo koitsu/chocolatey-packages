@@ -5,12 +5,13 @@
 
 $ErrorActionPreference = 'Stop'
 
+$packageName = $env:chocolateyPackageName
 $installDir = Split-Path $MyInvocation.MyCommand.Definition
 
-Write-Host "asm6f is going to be installed in: $installDir"
+Write-Host "$packageName is going to be installed in: $installDir"
 
 $packageArgs = @{
-  packageName     = $env:chocolateyPackageName
+  packageName     = $packageName
   url             = 'https://github.com/freem/asm6f/releases/download/v1.6_freem02/asm6f_20181019.zip'
   checksum        = 'd5ab4445f4624e801748ac2b3cab4d6560721a1c302456c44d53d1e353c92ef3'
   checksumType    = 'sha256'
