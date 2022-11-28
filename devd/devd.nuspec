@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>devd</id>
+    <version>0.9</version>
+    <title>devd</title>
+    <authors>Aldo Cortesi</authors>
+    <owners>koitsu</owners>
+    <licenseUrl>https://github.com/cortesi/devd/blob/v0.9/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/cortesi/devd</projectUrl>
+    <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/devd/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[devd is a local webserver for developers
+
+Devd is a single statically compiled binary with no external dependencies, and is released for macOS, Linux and Windows. Don't want to install Node or Python in that light-weight Docker instance you're hacking in? Just copy over the devd binary and be done with it.
+
+This means no config file, no daemonization, and logs that are designed to be read in the terminal by a developer. Logs are colorized and log entries span multiple lines. Devd's logs are detailed, warn about corner cases that other daemons ignore, and can optionally include things like detailed timing information and full headers.
+
+For further information, please refer to the devd documentation itself located on GitHub.
+]]></description>
+    <summary>A local webserver for developers</summary>
+    <releaseNotes>https://github.com/cortesi/devd/releases</releaseNotes>
+    <copyright>© Aldo Cortesi</copyright>
+    <tags>webserver http https server</tags>
+    <projectSourceUrl>https://github.com/cortesi/devd</projectSourceUrl>
+    <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/devd</packageSourceUrl>
+    <docsUrl>https://github.com/cortesi/devd/blob/v0.9/README.md</docsUrl>
+    <bugTrackerUrl>https://github.com/cortesi/devd/issues</bugTrackerUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
