@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop'
 
 $packageName = $env:chocolateyPackageName
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
