@@ -9,7 +9,7 @@ $setupLocation = Join-Path $unzipLocation 'HxDSetup.exe'
 $packageArgs = @{
   packageName     = $packageName
   url             = 'https://mh-nexus.de/downloads/HxDSetup.zip'
-  checksum        = 'ea97d98877342d725adcbfa075d5d5770470cf4a1d79477d577d299b6298d62f9a7fec8903633f8adcda7d306bff848751f8c788b611cc2d1074624a9153bc49'
+  checksum        = '33714bf909de383b2df6c7b860634cad0f1c0f6954753076c417feddc1477f506bc887b1b867a9ca2945fe90e6fd0ca70bbf74a63999a818e394d60cff59df99'
   checksumType    = 'sha512'
   unzipLocation   = $unzipLocation
 }
