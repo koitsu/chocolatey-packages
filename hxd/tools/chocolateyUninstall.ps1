@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop';
 
 $packageName = 'HxD'
 $registryUninstallerKeyName = 'HxD_is1'
