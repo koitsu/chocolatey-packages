@@ -28,7 +28,7 @@ function global:au_GetLatest {
 
 	# The checksum will be computed by Get-RemoteFiles in au_BeforeUpdate().
 	return @{
-		URL32 = $latestData.'Download-URI';
+		URL32 = $latestData.'Download-URI'.'*';
 		Version = $latestData.'Version';
 	}
 }
