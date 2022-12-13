@@ -34,10 +34,6 @@ All package versions will download and install the latest HxD version since the 
 		<releaseNotes>https://mh-nexus.de/en/hxd/changelog.php</releaseNotes>
 	</metadata>
 	<files>
-		<file src="tools\chocolateyInstall.ps1" target="tools" />
-		<file src="tools\chocolateyUninstall.ps1" target="tools" />
-		<file src="tools\HxDSetup.zip" target="tools" />
-		<file src="tools\LICENSE.txt" target="tools" />
-		<file src="tools\VERIFICATION.txt" target="tools" />
+		<file src="tools\**" target="tools" />
 	</files>
 </package>
