@@ -15,6 +15,15 @@ $packageArgs = @{
 }
 
 Install-ChocolateyZipPackage @packageArgs
-Install-ChocolateyInstallPackage 'HxD' 'exe' '/silent' $setupLocation
+
+$packageArgs = @{
+  packageName     = $packageName
+  fileType        = 'exe'
+  file            = $setupLocation
+  silentArgs      = '/VERYSILENT /NORESTART'
+  validExitCodes = @(0)
+}
+
+Install-ChocolateyInstallPackage @packageArgs
 
 Remove-Item $unzipLocation -Recurse

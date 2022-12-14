@@ -1,26 +1,27 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'HxD'
-$registryUninstallerKeyName = 'HxD_is1'
+$packageName = $env:chocolateyPackageName
+$softwareName = 'HxD Hex Editor*'
 
-$local_key       = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\$registryUninstallerKeyName"
-$local_key6432   = "HKCU:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\$registryUninstallerKeyName"
-$machine_key     = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$registryUninstallerKeyName"
-$machine_key6432 = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\$registryUninstallerKeyName"
+[array]$key = Get-UninstallRegistryKey -SoftwareName $softwareName
 
-$file = @($local_key, $local_key6432, $machine_key, $machine_key6432) `
-	| ?{ Test-Path $_ } `
-	| Get-ItemProperty `
-	| Select-Object -ExpandProperty UninstallString
-
-if (($null -eq $file) -or ($file -eq '')) {
-	Write-Host "$packageName has already been uninstalled by other means."
-	Write-Host 'The registry uninstall entry does not exist (anymore).'
-}
-else {
-	$installerType = 'EXE'
-	$silentArgs = '/verysilent'
-	$validExitCodes = @(0)
-
-	Uninstall-ChocolateyPackage -PackageName $packageName -FileType $installerType -SilentArgs $silentArgs -validExitCodes $validExitCodes -File $file
+if ($key.Count -eq 1) {
+  $key | ForEach-Object {
+    $packageArgs = @{
+      packageName    = $packageName
+      fileType       = 'exe'
+      silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
+      validExitCodes = @(0)
+      file           = "$($_.UninstallString.Trim('"'))"
+      softwareName   = $softwareName
+    }
+    Uninstall-ChocolateyPackage @packageArgs
+  }
+} elseif ($key.Count -eq 0) {
+  Write-Warning "$packageName may have been uninstalled by other means"
+} elseif ($key.Count -gt 1) {
+  Write-Warning "$($key.Count) uninstaller registry keys found"
+  Write-Warning "Please inform the package maintainer that the following keys were matched:"
+  $key | ForEach-Object { Write-Warning "- $($_.DisplayName): $($_.InstallLocation)" }
+  Write-Error "$packageName uninstallation failed"
 }
