@@ -1,5 +1,12 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+if ($env:chocolateyForceX86 -eq 'true') {
+  $err = ("This package does not support --x86/--force86. The installer" +
+  " chooses which to install depending on OS architecture. It cannot be" +
+  " overridden using this flag.")
+  Write-Error $err
+}
+
 $packageName = $env:chocolateyPackageName
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
