@@ -2,17 +2,13 @@
 set -e
 shopt -s expand_aliases
 
+# JSON manifest format: https://forum.mh-nexus.de/viewtopic.php?f=7&t=1212
+
 t1=$(mktemp)
 curl -s -S -o "${t1}" 'https://mh-nexus.de/updates/HxDCurrentVersion.json'
 version=$(cat "${t1}" | jq -r '.Version')
-zipurl=$(cat "${t1}" | jq -r '."Download-URI"')
-jsonchecksum=$(cat "${t1}" | jq -r '."Unique-File-IDs"."SHA-512"' | tr 'A-F' 'a-f')
-
-# Version 2.5.0.0 testing
-# curl -s -S -o "${t1}" 'https://mh-nexus.de/HxD2.5.0.0-installable-BCP47-Language-Tags.json'
-# version=$(cat "${t1}" | jq -r '.Version')
-# zipurl=$(cat "${t1}" | jq -r '."Download-URI"."*"')
-# jsonchecksum=$(cat "${t1}" | jq -r '."Unique-File-IDs"."HxDSetup.zip"."SHA-512"' | tr 'A-F' 'a-f')
+zipurl=$(cat "${t1}" | jq -r '."Download-URI"."*"')
+jsonchecksum=$(cat "${t1}" | jq -r '."Unique-File-IDs"."HxDSetup.zip"."SHA-512"' | tr 'A-F' 'a-f')
 
 # XXX debug
 # cat ${t1} | jq .
