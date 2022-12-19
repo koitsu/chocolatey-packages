@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ucon64</id>
+    <version>2.2.2</version>
+    <title>uCON64</title>
+    <authors>uCON64 Team</authors>
+    <owners>koitsu</owners>
+    <licenseUrl>https://ucon64.sourceforge.io/ucon64/license.html</licenseUrl>
+    <projectUrl>https://ucon64.sourceforge.io/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description><![CDATA[uCON64 is a tool to backup all kinds of video games. It supports almost every available backup unit for cartridge-based consoles and performs many other tasks like ROM hacking.
+
+Please note that this package is for the standalone CLI version of uCON64, and does not include USB support.
+]]></description>
+    <summary>Multipurpose video game ROM image and backup utility</summary>
+    <releaseNotes>https://ucon64.sourceforge.io/ucon64/changes.html</releaseNotes>
+    <tags>console snes nes famicom genesis megadrive nintendo n64 dreamcast nds neogeo gb gameboy pce tg16 sms wonderswan</tags>
+    <projectSourceUrl>https://sourceforge.net/p/ucon64/svn/HEAD/tree/</projectSourceUrl>
+    <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/ucon64</packageSourceUrl>
+    <docsUrl>https://ucon64.sourceforge.io/ucon64/readme.html</docsUrl>
+    <bugTrackerUrl>https://sourceforge.net/projects/ucon64/support</bugTrackerUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
