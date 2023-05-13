@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>keepass-plugin-hibpofflinecheck</id>
-    <version>1.7.9</version>
+    <version>1.7.10</version>
     <title>KeePass Plugin HIBPOfflineCheck</title>
     <authors>Mihai Ciuraru</authors>
     <owners>koitsu</owners>
-    <licenseUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.9/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.10/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectUrl>
     <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/keepass-plugin-hibpofflinecheck/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -31,7 +31,7 @@ For further information, please refer to the HIBPOfflineCheck documentation itse
     <tags>keepass plugin automate security hibp pwned owned</tags>
     <projectSourceUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectSourceUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/keepass-plugin-hibpofflinecheck</packageSourceUrl>
-    <docsUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.9/readme.md</docsUrl>
+    <docsUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.10/readme.md</docsUrl>
     <bugTrackerUrl>https://github.com/mihaifm/HIBPOfflineCheck/issues</bugTrackerUrl>
     <dependencies>
       <dependency id="keepass" version="[2.42, 3.0)" />

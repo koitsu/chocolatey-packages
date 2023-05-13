@@ -11,8 +11,8 @@ if ($psver -ge 3) {
 $packageName = $env:ChocolateyPackageName
 $packageSearch = 'KeePass Password Safe'
 $typName = 'HIBPOfflineCheck.plgx'
-$url = 'https://github.com/mihaifm/HIBPOfflineCheck/releases/download/1.7.9/HIBPOfflineCheck.plgx'
-$checksum = '17d4294b206d76c4a3aacaacc16eaad27cde27cba63858ec4a3e5acc7fafce14'
+$url = 'https://github.com/mihaifm/HIBPOfflineCheck/releases/download/1.7.10/HIBPOfflineCheck.plgx'
+$checksum = '5110f4ca10627a61b622b82e3b2ac301e90d212f0fbc9823ed68b995069f71d4'
 $checksumType = 'sha256'
 try {
 # search registry for location of installed KeePass
