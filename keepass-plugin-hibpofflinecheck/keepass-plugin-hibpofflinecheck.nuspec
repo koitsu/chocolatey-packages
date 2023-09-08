@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>keepass-plugin-hibpofflinecheck</id>
@@ -6,7 +6,7 @@
     <title>KeePass Plugin HIBPOfflineCheck</title>
     <authors>Mihai Ciuraru</authors>
     <owners>koitsu</owners>
-    <licenseUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.10/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectUrl>
     <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/keepass-plugin-hibpofflinecheck/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -26,18 +26,19 @@ Features:
 For further information, please refer to the HIBPOfflineCheck documentation itself located on GitHub.
 ]]></description>
     <summary>Plugin for KeePass 2.x to support Have I Been Pwned (HIBP)</summary>
-    <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases</releaseNotes>
+    <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases/tag/1.7.10</releaseNotes>
     <copyright>Copyright (C) 2018-2019 Mihai Ciuraru</copyright>
     <tags>keepass plugin automate security hibp pwned owned</tags>
     <projectSourceUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectSourceUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/keepass-plugin-hibpofflinecheck</packageSourceUrl>
-    <docsUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/1.7.10/readme.md</docsUrl>
+    <docsUrl>https://github.com/mihaifm/HIBPOfflineCheck/blob/master/readme.md</docsUrl>
     <bugTrackerUrl>https://github.com/mihaifm/HIBPOfflineCheck/issues</bugTrackerUrl>
     <dependencies>
       <dependency id="keepass" version="[2.42, 3.0)" />
     </dependencies>
   </metadata>
   <files>
+    <file src="legal\**" target="legal" />
     <file src="tools\**" target="tools" />
   </files>
 </package>

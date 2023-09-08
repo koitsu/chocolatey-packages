@@ -1,43 +1,35 @@
-﻿# script based on tunisiano187, released under AGPL-3.0 License
-# source: https://github.com/tunisiano187/Chocolatey-packages/blob/master/automatic/keepass-plugin-kpscript/tools/chocolateyInstall.ps1
+﻿$ErrorActionPreference = 'Stop'
 
-# powershell v2 compatibility
-$psVer = $PSVersionTable.PSVersion.Major
-if ($psver -ge 3) {
-  function Get-ChildItemDir {Get-ChildItem -Directory $args}
-} else {
-  function Get-ChildItemDir {Get-ChildItem $args}
-}
-$packageName = 'keepass-plugin-hibpofflinecheck'
-$typName = 'HIBPOfflineCheck.plgx'
+$packageName = $env:ChocolateyPackageName
 $packageSearch = 'KeePass Password Safe'
+$pluginFilename = 'HIBPOfflineCheck.plgx'
+
 try {
-# search registry for installed KeePass
-$regPath = Get-ItemProperty -Path @('HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                    'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                    'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*') `
-                            -ErrorAction:SilentlyContinue `
-           | Where-Object {$_.DisplayName -like "$packageSearch*"} `
-           | ForEach-Object {$_.InstallLocation}
-$installPath = $regPath + "Plugins\"
-if (! $installPath) {
-  Write-Verbose "$($packageSearch) not found in registry."
-  $binRoot = Get-BinRoot
-  $portPath = Join-Path $binRoot "keepass"
-  $installPath = Get-ChildItemDir $portPath* -ErrorAction SilentlyContinue
-}
-if (! $installPath) {
-  throw "$($packageSearch) install location could not be found."
-}
-$pluginPath = $installPath
-$installFile = Join-Path $pluginPath $typName
-Remove-Item -Path $installFile `
-            -Force `
-            -ErrorAction Continue
-if ( Get-Process -Name "KeePass" `
-                 -ErrorAction SilentlyContinue ) {
-  Write-Warning "$($packageSearch) is running. $($packageName) will be removed at next restart of $($packageSearch)."
-}
+  # Search the registry for the directory/path KeePass was installed into
+  $regPath = Get-ItemProperty -Path @('HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
+                                      'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
+                                      'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*') `
+                              -ErrorAction:SilentlyContinue `
+             | Where-Object { $_.DisplayName -like "$packageSearch*" } `
+             | ForEach-Object { $_.InstallLocation }
+
+  if ( -not $regPath ) {
+    throw "A KeePass installation could not be found in the registry."
+  }
+
+  $pluginsDir = Join-Path $regPath 'Plugins'
+
+  if (-not ( Test-Path -Path $pluginsDir ) ) {
+    throw "Abnormal KeePass installation detected (lacks a Plugins directory)."
+  }
+
+  $pluginFilePath = Join-Path $pluginsDir $pluginFilename
+
+  Remove-Item -Path $pluginFilePath -Force -ErrorAction Continue
+
+  if ( Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue ) {
+    Write-Warning "KeePass is currently running. Please restart KeePass to unload the plugin."
+  }
 } catch {
   throw $_.Exception
 }
