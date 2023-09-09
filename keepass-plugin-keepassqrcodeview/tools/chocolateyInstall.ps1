@@ -1,55 +1,41 @@
-﻿# script based on tunisiano187, released under AGPL-3.0 License
-# source: https://github.com/tunisiano187/Chocolatey-packages/blob/master/automatic/keepass-plugin-kpscript/tools/chocolateyInstall.ps1
+﻿$ErrorActionPreference = 'Stop'
 
-# powershell v2 compatibility
-$psVer = $PSVersionTable.PSVersion.Major
-if ($psver -ge 3) {
-  function Get-ChildItemDir {Get-ChildItem -Directory $args}
-} else {
-  function Get-ChildItemDir {Get-ChildItem $args}
-}
 $packageName = $env:ChocolateyPackageName
 $packageSearch = 'KeePass Password Safe'
-$typName = 'KeePassQRCodeView.plgx'
-$url = 'https://github.com/JanisEst/KeePassQRCodeView/releases/download/v1.1.0/KeePassQRCodeView.plgx'
-$checksum = '5589badfb30281e3bbe6a0046c95f0d6fd2efe6c2a4d0e117d78985bca12b651'
-$checksumType = 'sha256'
+$pluginFilename = 'KeePassQRCodeView.plgx'
+
 try {
-# search registry for location of installed KeePass
-$regPath = Get-ItemProperty -Path @('HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                    'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
-                                    'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*') `
-                            -ErrorAction:SilentlyContinue `
-           | Where-Object {$_.DisplayName -like "$packageSearch*" `
-                           -and `
-                           $_.DisplayVersion -ge 2.42 `
-                           -and `
-                           $_.DisplayVersion -lt 3.0 } `
-           | ForEach-Object {$_.InstallLocation}
-$installPath = $regPath + "Plugins\"
-if (! $installPath) {
-  Write-Verbose "$($packageSearch) not found installed."
-  $binRoot = Get-BinRoot
-  $portPath = Join-Path $binRoot "keepass"
-  $installPath = Get-ChildItemDir $portPath* -ErrorAction SilentlyContinue
-}
-if (! $installPath) {
-  throw "$($packageSearch) location could not be found."
-}
-$pluginPath = $installPath
-$installFile = Join-Path $pluginPath $typName
-# download PLGX file into Plugins dir
-Get-ChocolateyWebFile -PackageName "$packageName" `
-                             -Url "$url" `
-                             -FileFullPath  "$installFile" `
-                             -Checksum "$checksum" `
-                             -ChecksumType "$checksumType"
-if ( Get-Process -Name "KeePass" `
-                 -ErrorAction SilentlyContinue ) {
-  Write-Warning "$($packageSearch) is currently running. Plugin will be available at next restart of $($packageSearch)."
-} else {
-  Write-Output "$($packageName) will be loaded the next time KeePass is started."
-  Write-Output "Please note this plugin may require additional configuration. Look for a new entry in KeePass' Menu -> Tools"
-}} catch {
+  # Search the registry for the directory/path KeePass was installed into
+  $regPath = Get-ItemProperty -Path @('HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*',
+                                      'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*',
+                                      'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*') `
+                              -ErrorAction:SilentlyContinue `
+             | Where-Object { $_.DisplayName -like "$packageSearch*" -and `
+                              $_.DisplayVersion -ge 2.42 -and `
+                              $_.DisplayVersion -lt 3.0 } `
+             | ForEach-Object { $_.InstallLocation }
+
+  if ( -not $regPath ) {
+    throw "A KeePass 2.42 or newer installation could not be found in the registry."
+  }
+
+  $pluginsDir = Join-Path $regPath 'Plugins'
+
+  if ( -not ( Test-Path -Path $pluginsDir ) ) {
+    throw "Abnormal KeePass installation detected (lacks a Plugins directory)."
+  }
+
+  $toolsPath = Split-Path -parent $MyInvocation.MyCommand.Definition
+  $pluginFilePath = Join-Path $toolsPath $pluginFilename
+
+  Copy-Item $pluginFilePath -Destination $pluginsDir
+
+  if ( Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue ) {
+    Write-Warning "KeePass is currently running. Please restart KeePass to load the plugin."
+  } else {
+    Write-Output "Plugin $($packageName) will be loaded the next time KeePass is started."
+    Write-Output "Please note this plugin may require additional configuration. Look for a new entry in the KeePass Tools menu."
+  }
+} catch {
   throw $_.Exception
 }
