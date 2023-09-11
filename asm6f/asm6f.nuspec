@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>asm6f</id>
@@ -28,14 +28,15 @@ Features compared to stock ASM6:
 For further information, please refer to the asm6f documentation itself located on GitHub.
 ]]></description>
     <summary>A 6502 assembler intended for NES and Famicom development</summary>
-    <releaseNotes>https://github.com/freem/asm6f/releases</releaseNotes>
+    <releaseNotes>https://github.com/freem/asm6f/releases/tag/v1.6_freem02</releaseNotes>
     <tags>assembler 6502 nes famicom</tags>
     <projectSourceUrl>https://github.com/freem/asm6f</projectSourceUrl>
     <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/asm6f</packageSourceUrl>
-    <docsUrl>https://github.com/freem/asm6f</docsUrl>
+    <docsUrl>https://github.com/freem/asm6f/blob/master/readme.txt</docsUrl>
     <bugTrackerUrl>https://github.com/freem/asm6f/issues</bugTrackerUrl>
   </metadata>
   <files>
+    <file src="legal\**" target="legal" />
     <file src="tools\**" target="tools" />
   </files>
 </package>
