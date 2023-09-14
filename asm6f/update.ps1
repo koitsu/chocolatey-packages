@@ -6,15 +6,12 @@ function global:au_SearchReplace {
   @{
     ".\legal\VERIFICATION.txt" = @{
       "(?i)(^\s*location on\:?\s*)\<.*\>" = "`${1}<$($Latest.ReleaseUrl)>"
-      "(?i)(\s*32\-Bit Software.*)\<.*\>" = "`${1}<$($Latest.URL32)>"
-      "(?i)(\s*64\-Bit Software.*)\<.*\>" = "`${1}<$($Latest.URL64)>"
+      "(?i)(\s*Software.*)\<.*\>"         = "`${1}<$($Latest.URL32)>"
       "(?i)(^\s*checksum\s*type\:).*"     = "`${1} $($Latest.ChecksumType32)"
-      "(?i)(^\s*checksum(32)?\:).*"       = "`${1} $($Latest.Checksum32)"
-      "(?i)(^\s*checksum(64)?\:).*"       = "`${1} $($Latest.Checksum64)"
+      "(?i)(^\s*checksum\:).*"            = "`${1} $($Latest.Checksum32)"
     }
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*fileFullPath\s*=\s*`"[$]toolsDir\\).*"   = "`${1}$($Latest.FileName32)`""
-      "(?i)(^\s*fileFullPath64\s*=\s*`"[$]toolsDir\\).*" = "`${1}$($Latest.FileName64)`""
+      "(?i)(^\s*fileFullPath\s*=\s*`"[$]toolsDir\\).*" = "`${1}$($Latest.FileName32)`""
     }
     "$($Latest.PackageName).nuspec" = @{
       "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseUrl)`${2}"
@@ -32,10 +29,9 @@ function global:au_GetLatest {
   $buildDate   = $fileName -Replace "^asm6f_(\d+).*", '$1'
 
   @{
-    URL32         = $downloadUrl
-    URL64         = $downloadUrl
-    Version       = $majorMinor + '.' + $buildDate
-    ReleaseUrl    = $LatestRelease.html_url
+    URL32      = $downloadUrl
+    Version    = $majorMinor + '.' + $buildDate
+    ReleaseUrl = $LatestRelease.html_url
   }
 }
 

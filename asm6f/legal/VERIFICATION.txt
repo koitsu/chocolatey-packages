@@ -7,13 +7,11 @@ location on <https://github.com/freem/asm6f/releases/tag/v1.6_freem02>
 and can be verified by doing the following:
 
 1. Download the following:
-  32-Bit software: <https://github.com/freem/asm6f/releases/download/v1.6_freem02/asm6f_20181019.zip>
-  64-Bit software: <https://github.com/freem/asm6f/releases/download/v1.6_freem02/asm6f_20181019.zip>
+  software: <https://github.com/freem/asm6f/releases/download/v1.6_freem02/asm6f_20181019.zip>
 2. Get the checksum using one of the following methods:
   - Using powershell function 'Get-FileHash'
   - Use chocolatey utility 'checksum.exe'
 3. The checksums should match the following:
 
   checksum type: sha256
-  checksum32: D5AB4445F4624E801748AC2B3CAB4D6560721A1C302456C44D53D1E353C92EF3
-  checksum64: D5AB4445F4624E801748AC2B3CAB4D6560721A1C302456C44D53D1E353C92EF3
+  checksum: D5AB4445F4624E801748AC2B3CAB4D6560721A1C302456C44D53D1E353C92EF3

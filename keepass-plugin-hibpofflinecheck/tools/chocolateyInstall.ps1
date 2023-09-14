@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = $env:ChocolateyPackageName
-$packageSearch = 'KeePass Password Safe'
+$packageName    = $env:ChocolateyPackageName
+$packageSearch  = 'KeePass Password Safe'
 $pluginFilename = 'HIBPOfflineCheck.plgx'
 
 try {

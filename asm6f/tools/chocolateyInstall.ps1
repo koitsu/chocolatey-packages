@@ -3,10 +3,9 @@
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-  packageName     = $env:ChocolateyPackageName
-  fileFullPath    = "$toolsDir\asm6f_20181019.zip"
-  fileFullPath64  = "$toolsDir\asm6f_20181019.zip"
-  destination     = $toolsDir
+  packageName  = $env:ChocolateyPackageName
+  fileFullPath = "$toolsDir\asm6f_20181019.zip"
+  destination  = $toolsDir
 }
 
 Get-ChocolateyUnzip @packageArgs

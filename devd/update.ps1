@@ -26,10 +26,10 @@ function global:au_GetLatest {
   $LatestRelease = Get-GitHubRelease -OwnerName cortesi -RepositoryName devd -Latest
 
   @{
-    URL32         = $LatestRelease.assets | Where-Object { $_.name -match '-windows32\.zip$' } | Select-Object -ExpandProperty browser_download_url
-    URL64         = $LatestRelease.assets | Where-Object { $_.name -match '-windows64\.zip$' } | Select-Object -ExpandProperty browser_download_url
-    Version       = $LatestRelease.tag_name.TrimStart("v")
-    ReleaseUrl    = $LatestRelease.html_url
+    URL32      = $LatestRelease.assets | Where-Object { $_.name -match '-windows32\.zip$' } | Select-Object -ExpandProperty browser_download_url
+    URL64      = $LatestRelease.assets | Where-Object { $_.name -match '-windows64\.zip$' } | Select-Object -ExpandProperty browser_download_url
+    Version    = $LatestRelease.tag_name.TrimStart("v")
+    ReleaseUrl = $LatestRelease.html_url
   }
 }
 
