@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: Ω -->
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>ucon64</id>
@@ -22,6 +23,7 @@ Please note that this package is for the standalone CLI version of uCON64, and d
     <bugTrackerUrl>https://sourceforge.net/projects/ucon64/support</bugTrackerUrl>
   </metadata>
   <files>
+    <file src="legal\**" target="legal" />
     <file src="tools\**" target="tools" />
   </files>
 </package>

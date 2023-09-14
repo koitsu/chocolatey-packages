@@ -1,0 +1,19 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software have been downloaded from the listed download
+location on <https://sourceforge.net/projects/ucon64/files/ucon64/>
+and can be verified by doing the following:
+
+1. Download the following:
+  32-Bit software: <https://sourceforge.net/projects/ucon64/files/ucon64/ucon64-2.2.2/ucon64-2.2.2-win32-vc-bin.zip>
+2. Get the checksum using one of the following methods:
+  - Using powershell function 'Get-FileHash'
+  - Use chocolatey utility 'checksum.exe'
+3. The checksums should match the following:
+
+  checksum type: sha256
+  checksum32: 4A4F3E6F46BB61A10DB9E1764AA499DE23879195AEC626AAAED8379AEAE3D6F8
+
+The file 'LICENSE.txt' has been obtained from <https://ucon64.sourceforge.io/ucon64/license.html>
