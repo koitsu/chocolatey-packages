@@ -7,30 +7,28 @@ if ($env:chocolateyForceX86 -eq 'true') {
   Write-Error $err
 }
 
-$packageName = $env:chocolateyPackageName
-$toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$packageName = $env:ChocolateyPackageName
+$toolsDir    = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
-$unzipLocation = Join-Path $toolsDir 'HxDSetup'
-$setupLocation = Join-Path $unzipLocation 'HxDSetup.exe'
+$zipFilePath  = Join-Path $toolsDir 'HxDSetup.zip'
+$setupExePath = Join-Path $toolsDir 'HxDSetup.exe'
 
 $packageArgs = @{
-  packageName     = $packageName
-  url             = 'https://mh-nexus.de/downloads/HxDSetup.zip'
-  checksum        = 'ea97d98877342d725adcbfa075d5d5770470cf4a1d79477d577d299b6298d62f9a7fec8903633f8adcda7d306bff848751f8c788b611cc2d1074624a9153bc49'
-  checksumType    = 'sha512'
-  unzipLocation   = $unzipLocation
+  packageName  = $packageName
+  fileFullPath = $zipFilePath
+  destination  = $toolsDir
 }
 
-Install-ChocolateyZipPackage @packageArgs
+Get-ChocolateyUnzip @packageArgs
 
 $packageArgs = @{
-  packageName     = $packageName
-  fileType        = 'exe'
-  file            = $setupLocation
-  silentArgs      = '/VERYSILENT /NORESTART'
+  packageName    = $packageName
+  fileType       = 'exe'
+  file           = $setupExePath
+  silentArgs     = '/VERYSILENT /NORESTART'
   validExitCodes = @(0)
 }
 
 Install-ChocolateyInstallPackage @packageArgs
 
-Remove-Item $unzipLocation -Recurse
+Remove-Item $setupExePath

@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = $env:chocolateyPackageName
+$packageName = $env:ChocolateyPackageName
 $softwareName = 'HxD Hex Editor*'
 
 [array]$key = Get-UninstallRegistryKey -SoftwareName $softwareName

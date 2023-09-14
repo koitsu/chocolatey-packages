@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
-	<metadata>
-		<!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
-		<id>hxd</id>
-		<title>HxD - Hex Editor and Disk Editor (Install)</title>
-		<version>2.5.0.0</version>
-		<authors>Maël Hörz</authors>
-		<owners>koitsu</owners>
-		<summary>HxD is a carefully designed and fast hex editor which, additionally to raw disk editing and modifying of main memory (RAM), handles files of any size.</summary>
-		<description><![CDATA[HxD is a carefully designed and fast hex editor which, additionally to raw disk editing and modifying of main memory (RAM), handles files of any size.
+  <metadata>
+    <id>hxd</id>
+    <title>HxD - Hex Editor and Disk Editor (Install)</title>
+    <version>2.5.0.0</version>
+    <authors>Maël Hörz</authors>
+    <owners>koitsu</owners>
+    <summary>HxD is a carefully designed and fast hex editor which, additionally to raw disk editing and modifying of main memory (RAM), handles files of any size.</summary>
+    <description><![CDATA[HxD is a carefully designed and fast hex editor which, additionally to raw disk editing and modifying of main memory (RAM), handles files of any size.
 
 The easy to use interface offers features such as searching and replacing, exporting, checksums/digests, insertion of byte patterns, a file shredder, concatenation or splitting of files, statistics and much more.
 
@@ -21,19 +19,20 @@ Furthermore a lot of effort was put into making operations fast and efficient, i
 ### Package Specifics
 All package versions will download and install the latest HxD version since the software vendor only provides a generic URI without version information.
 ]]></description>
-		<projectUrl>https://mh-nexus.de/en/hxd/</projectUrl>
-		<packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/hxd</packageSourceUrl>
-		<docsUrl>https://mh-nexus.de/en/hxd/#features</docsUrl>
-		<mailingListUrl>https://forum.mh-nexus.de/viewforum.php?f=10</mailingListUrl>
-		<bugTrackerUrl>https://forum.mh-nexus.de/viewforum.php?f=10</bugTrackerUrl>
-		<tags>hxd editor hex file admin</tags>
-		<copyright>Copyright © 2003-2021 Maël Hörz</copyright>
-		<licenseUrl>https://mh-nexus.de/en/hxd/license.php</licenseUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/hxd/HxD.png</iconUrl>
-		<releaseNotes>https://mh-nexus.de/en/hxd/changelog.php</releaseNotes>
-	</metadata>
-	<files>
-		<file src="tools\**" target="tools" />
-	</files>
+    <projectUrl>https://mh-nexus.de/en/hxd/</projectUrl>
+    <packageSourceUrl>https://github.com/koitsu/chocolatey-packages/tree/master/hxd</packageSourceUrl>
+    <docsUrl>https://mh-nexus.de/en/hxd/#features</docsUrl>
+    <mailingListUrl>https://forum.mh-nexus.de/viewforum.php?f=10</mailingListUrl>
+    <bugTrackerUrl>https://forum.mh-nexus.de/viewforum.php?f=10</bugTrackerUrl>
+    <tags>hxd editor hex file admin</tags>
+    <copyright>Copyright © 2003-2021 Maël Hörz</copyright>
+    <licenseUrl>https://mh-nexus.de/en/hxd/license.php</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/hxd/HxD.png</iconUrl>
+    <releaseNotes>https://mh-nexus.de/en/hxd/changelog.php</releaseNotes>
+  </metadata>
+  <files>
+    <file src="legal\**" target="legal" />
+    <file src="tools\**" target="tools" />
+  </files>
 </package>

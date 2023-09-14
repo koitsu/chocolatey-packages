@@ -1,0 +1,21 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software have been downloaded from the listed download
+location on <https://mh-nexus.de/downloads/HxDSetup.zip>
+and can be verified by doing the following:
+
+1. Download the following:
+  software: <https://mh-nexus.de/downloads/HxDSetup.zip>
+2. Get the checksum using one of the following methods:
+  - Using powershell function 'Get-FileHash'
+  - Use chocolatey utility 'checksum.exe'
+3. The checksums should match the following:
+
+  checksum type: sha512
+  checksum: EA97D98877342D725ADCBFA075D5D5770470CF4A1D79477D577D299B6298D62F9A7FEC8903633F8ADCDA7D306BFF848751F8C788B611CC2D1074624A9153BC49
+
+The file 'LICENSE.txt' has been obtained from <https://mh-nexus.de/en/hxd/license.php>
+and rendered into text using the following commands:
+curl -s 'https://mh-nexus.de/en/hxd/license.php' | lynx -stdin -dump -nomargins --display_charset=utf-8
