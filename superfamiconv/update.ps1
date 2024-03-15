@@ -23,7 +23,7 @@ function global:au_GetLatest {
   $LatestRelease = Get-GitHubRelease -OwnerName Optiroc -RepositoryName SuperFamiconv -Latest
 
   @{
-    URL64      = $LatestRelease.assets | Where-Object { $_.name -match '-win_x64\.zip$' } | Select-Object -ExpandProperty browser_download_url
+    URL64      = $LatestRelease.assets | Where-Object { $_.name -match "_win64_.*\.zip$" } | Select-Object -ExpandProperty browser_download_url
     Version    = $LatestRelease.tag_name.TrimStart("v")
     ReleaseUrl = $LatestRelease.html_url
   }

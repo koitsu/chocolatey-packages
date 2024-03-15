@@ -4,7 +4,7 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  fileFullPath64 = "$toolsDir\SuperFamiconv-v0.9.2-win_x64.zip"
+  fileFullPath64 = "$toolsDir\superfamiconv_win64_v0.10.0.zip"
   destination    = $toolsDir
 }
 
