@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>keepass-plugin-hibpofflinecheck</id>
-    <version>1.7.10</version>
+    <version>1.7.11</version>
     <title>KeePass Plugin HIBPOfflineCheck</title>
     <authors>Mihai Ciuraru</authors>
     <owners>koitsu</owners>
@@ -27,7 +27,7 @@ Features:
 For further information, please refer to the HIBPOfflineCheck documentation itself located on GitHub.
 ]]></description>
     <summary>Plugin for KeePass 2.x to support Have I Been Pwned (HIBP)</summary>
-    <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases/tag/1.7.10</releaseNotes>
+    <releaseNotes>https://github.com/mihaifm/HIBPOfflineCheck/releases/tag/1.7.11</releaseNotes>
     <copyright>Copyright (C) 2018-2019 Mihai Ciuraru</copyright>
     <tags>keepass plugin automate security hibp pwned owned</tags>
     <projectSourceUrl>https://github.com/mihaifm/HIBPOfflineCheck</projectSourceUrl>

@@ -3,17 +3,17 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 The embedded software have been downloaded from the listed download
-location on <https://github.com/mihaifm/HIBPOfflineCheck/releases/tag/1.7.10>
+location on <https://github.com/mihaifm/HIBPOfflineCheck/releases/tag/1.7.11>
 and can be verified by doing the following:
 
 1. Download the following:
-  32-Bit software: <https://github.com/mihaifm/HIBPOfflineCheck/releases/download/1.7.10/HIBPOfflineCheck.plgx>
+  32-Bit software: <https://github.com/mihaifm/HIBPOfflineCheck/releases/download/1.7.11/HIBPOfflineCheck.plgx>
 2. Get the checksum using one of the following methods:
   - Using powershell function 'Get-FileHash'
   - Use chocolatey utility 'checksum.exe'
 3. The checksums should match the following:
 
   checksum type: sha256
-  checksum32: 5110F4CA10627A61B622B82E3B2AC301E90D212F0FBC9823ED68B995069F71D4
+  checksum32: A6947762289C6275BA4C9F3C4822F2909BECAA4923040AC4B00CE4270EFF3B73
 
 The file 'LICENSE.txt' has been obtained from <https://raw.githubusercontent.com/mihaifm/HIBPOfflineCheck/1.7.10/LICENSE>
