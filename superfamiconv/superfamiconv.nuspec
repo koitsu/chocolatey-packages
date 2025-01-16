@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>superfamiconv</id>
-    <version>0.10.0</version>
+    <version>0.11.0</version>
     <title>SuperFamiconv</title>
     <authors>Optiroc</authors>
     <owners>koitsu</owners>
@@ -20,7 +20,7 @@ Systems supported include the Game Boy, Game Boy Color, Game Boy Advance, Genesi
 For further information, please refer to the SuperFamiconv documentation itself located on GitHub.
 ]]></description>
     <summary>A tile graphics converter for classic video game consoles and handhelds</summary>
-    <releaseNotes>https://github.com/Optiroc/SuperFamiconv/releases/tag/v0.10.0</releaseNotes>
+    <releaseNotes>https://github.com/Optiroc/SuperFamiconv/releases/tag/v0.11.0</releaseNotes>
     <copyright>Copyright (C) 2017-2019 David Lindecrantz</copyright>
     <tags>gameboy gb gbc gba genesis megadrive pcengine pce turbografx tg16 sfc snes wonderswan</tags>
     <projectSourceUrl>https://github.com/Optiroc/SuperFamiconv</projectSourceUrl>
