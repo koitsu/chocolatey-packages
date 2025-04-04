@@ -22,11 +22,11 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
   $LatestRelease = Get-GitHubRelease -OwnerName freem -RepositoryName asm6f -Latest
 
-  $asset       = $LatestRelease.assets | Where-Object { $_.name -match '^asm6f_.*\.zip$' }
+  $asset       = $LatestRelease.assets | Where-Object { $_.name -match '^asm6f_v\d+_.*\.zip$' }
   $downloadUrl = $asset | Select-Object -ExpandProperty browser_download_url
   $fileName    = $asset | Select-Object -ExpandProperty name
   $majorMinor  = $LatestRelease.tag_name.TrimStart("v") -Split '_' | Select-Object -First 1
-  $buildDate   = $fileName -Replace "^asm6f_(\d+).*", '$1'
+  $buildDate   = $fileName -Replace "^asm6f_v\d+_(\d+).*", '$1'
 
   @{
     URL32      = $downloadUrl

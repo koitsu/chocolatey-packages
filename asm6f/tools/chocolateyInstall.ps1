@@ -4,7 +4,7 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
   packageName  = $env:ChocolateyPackageName
-  fileFullPath = "$toolsDir\asm6f_20181019.zip"
+  fileFullPath = "$toolsDir\asm6f_v03_20250127.zip"
   destination  = $toolsDir
 }
 
