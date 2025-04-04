@@ -7,7 +7,7 @@
     <title>ASM6f</title>
     <authors>freem, nicklausw, Sour, loopy</authors>
     <owners>koitsu</owners>
-    <licenseUrl>https://spdx.org/licenses/Unlicense.html</licenseUrl>
+    <licenseUrl>https://unlicense.org/</licenseUrl>
     <projectUrl>https://github.com/freem/asm6f</projectUrl>
     <iconUrl>https://raw.githack.com/koitsu/chocolatey-packages/master/asm6f/icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
